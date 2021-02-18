@@ -1,0 +1,56 @@
+{
+  "name": "prodap-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc && npm run lint && cp package.json dist/package.json",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+    "watch": "concurrently \"tsc -w ./src/**/*.ts\" \"nodemon --watch ./dist/ --exec npm run start\"",
+    "start": "functions-framework --target=deviceRegister --source=./dist",
+    "test": "jest --forceExit --coverage --verbose",
+    "watch-test": "npm run test -- --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heitor-amaral/prodap-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heitor-amaral/prodap-challenge/issues"
+  },
+  "homepage": "https://github.com/heitor-amaral/prodap-challenge#readme",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^1.7.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.5.0",
+    "joi": "^17.4.0",
+    "lusca": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/errorhandler": "^1.5.0",
+    "@types/eslint": "^7.2.6",
+    "@types/express": "^4.17.11",
+    "@types/faker": "^5.1.6",
+    "@types/jest": "^26.0.20",
+    "@types/lusca": "^1.6.2",
+    "@types/node": "^14.14.28",
+    "@types/supertest": "^2.0.10",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.20.0",
+    "faker": "^5.4.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3",
+    "ts-jest": "^26.5.1",
+    "typescript": "^4.1.5"
+  }
+}
